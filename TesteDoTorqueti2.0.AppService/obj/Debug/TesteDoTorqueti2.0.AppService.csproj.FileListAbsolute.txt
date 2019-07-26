@@ -1,0 +1,2 @@
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.AppService\obj\Debug\TesteDoTorqueti2.0.AppService.csprojAssemblyReference.cache
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.AppService\obj\Debug\TesteDoTorqueti2.0.AppService.csproj.CoreCompileInputs.cache

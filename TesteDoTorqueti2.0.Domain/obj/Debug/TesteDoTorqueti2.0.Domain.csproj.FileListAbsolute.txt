@@ -1,0 +1,6 @@
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.Domain\bin\Debug\TesteDoTorqueti2.0.Domain.dll
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.Domain\bin\Debug\TesteDoTorqueti2.0.Domain.pdb
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.Domain\obj\Debug\TesteDoTorqueti2.0.Domain.csprojAssemblyReference.cache
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.Domain\obj\Debug\TesteDoTorqueti2.0.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.Domain\obj\Debug\TesteDoTorqueti2.0.Domain.dll
+C:\Users\Global01\Documents\GitHub\TesteDoTorqueti\TesteDoTorqueti.BackEnd\TesteDoTorqueti2.0.Domain\obj\Debug\TesteDoTorqueti2.0.Domain.pdb

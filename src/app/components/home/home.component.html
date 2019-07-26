@@ -1,0 +1,213 @@
+<h1>Home Component</h1>
+
+<button type="button" class="btn btn-primary" (click)="insertModal(Inserir)">Inserir novo cliente</button>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Endereço</th>
+			<th scope="col">Telefone</th>
+			<th scope="col">Cidade</th>
+			<th scope="col">Estado</th>
+			<th scope="col">Data de Nascimento</th>
+			<th scope="col">Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let cliente of this.clientes">
+			<th scope="row"> {{ cliente.Id }} </th>
+			<td> {{ cliente.Nome }} </td>
+			<td> {{ cliente.Endereco }} </td>
+			<td> {{ cliente.Telefone }} </td>
+			<td> {{ cliente.Cidade }} </td>
+			<td> {{ cliente.Estado }} </td>
+			<td> {{ cliente.DataNascimento }} </td>
+			<td>
+				<i class="fa fa-info-circle fa-lg" (click)="detailModal(Detalhes); detail(cliente)"></i>|
+				<i class="fa fa-edit fa-lg" (click)="editModal(Editar); edit(cliente)"></i>|
+				<i class="fa fa-eraser fa-lg" (click)="deleteModal(Excluir)"></i></td>
+		</tr>
+	</tbody>
+</table>
+
+<ng-template #Inserir>
+	<div class="modal-header">
+		<h4 class="modal-title pull-left">Inserir Cliente</h4>
+		<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<form (ngSubmit)="inserirClientePost()" #inserirCliente="ngForm">
+			<div class="form-group">
+				<label for="name">Nome</label>
+				<input [(ngModel)]="this.cliente.Nome" name="Nome" required id="name" class="form-control" type="text"
+					placeholder="Nome">
+			</div>
+			<div class="form-group">
+				<label for="adress">Endereço</label>
+				<input [(ngModel)]="this.cliente.Endereco" name="Endereco" required id="adress" class="form-control"
+					type="text" placeholder="Endereço">
+			</div>
+			<div class="form-group">
+				<label for="telephone">Telefone</label>
+				<input [(ngModel)]="this.cliente.Telefone" name="Telefone" required id="telephone" class="form-control"
+					type="text" placeholder="Telefone">
+			</div>
+			<div class="form-group">
+				<label for="city">Cidade</label>
+				<input [(ngModel)]="this.cliente.Cidade" name="Cidade" required id="city" class="form-control"
+					type="text" placeholder="Cidade">
+			</div>
+			<div class="form-group">
+				<label for="state">Estado</label>
+				<input [(ngModel)]="this.cliente.Estado" name="Estado" required id="state" class="form-control"
+					type="text" placeholder="Estado">
+			</div>
+			<div class="form-group">
+				<label for="dateBirth">Data de Nascimento</label>
+				<input [(ngModel)]="this.cliente.DataNascimento" name="DataNascimento" required id="dateBirth"
+					class="form-control" type="date" placeholder="Data de Nascimento" bsDatepicker>
+			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+	</div>
+</ng-template>
+
+<ng-template #Detalhes>
+	<div class="modal-header">
+		<h4 class="modal-title pull-left">Detalhes</h4>
+		<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<form (ngSubmit)="inserirClientePost()" #inserirCliente="ngForm">
+			<div class="form-group">
+				<label for="name">Nome</label>
+				<input [(ngModel)]="this.cliente.Nome" name="Nome" required id="name" class="form-control" type="text"
+					placeholder="Nome" disabled>
+			</div>
+			<div class="form-group">
+				<label for="adress">Endereço</label>
+				<input [(ngModel)]="this.cliente.Endereco" name="Endereco" required id="adress" class="form-control"
+					type="text" placeholder="Endereço" disabled>
+			</div>
+			<div class="form-group">
+				<label for="telephone">Telefone</label>
+				<input [(ngModel)]="this.cliente.Telefone" name="Telefone" required id="telephone" class="form-control"
+					type="text" placeholder="Telefone" disabled>
+			</div>
+			<div class="form-group">
+				<label for="city">Cidade</label>
+				<input [(ngModel)]="this.cliente.Cidade" name="Cidade" required id="city" class="form-control"
+					type="text" placeholder="Cidade" disabled>
+			</div>
+			<div class="form-group">
+				<label for="state">Estado</label>
+				<input [(ngModel)]="this.cliente.Estado" name="Estado" required id="state" class="form-control"
+					type="text" placeholder="Estado" disabled>
+			</div>
+			<div class="form-group">
+				<label for="dateBirth">Data de Nascimento</label>
+				<input [(ngModel)]="this.cliente.DataNascimento" name="DataNascimento" required id="dateBirth"
+					class="form-control" type="date" placeholder="Data de Nascimento" bsDatepicker disabled>
+			</div>
+		</form>
+	</div>
+</ng-template>
+
+<ng-template #Editar>
+	<div class="modal-header">
+		<h4 class="modal-title pull-left">Editar</h4>
+		<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<form (ngSubmit)="editClientePut()" #inserirCliente="ngForm">
+			<div class="form-group">
+				<label for="name">Nome</label>
+				<input [(ngModel)]="this.cliente.Nome" name="Nome" required id="name" class="form-control" type="text"
+					placeholder="Nome">
+			</div>
+			<div class="form-group">
+				<label for="adress">Endereço</label>
+				<input [(ngModel)]="this.cliente.Endereco" name="Endereco" required id="adress" class="form-control"
+					type="text" placeholder="Endereço">
+			</div>
+			<div class="form-group">
+				<label for="telephone">Telefone</label>
+				<input [(ngModel)]="this.cliente.Telefone" name="Telefone" required id="telephone" class="form-control"
+					type="text" placeholder="Telefone">
+			</div>
+			<div class="form-group">
+				<label for="city">Cidade</label>
+				<input [(ngModel)]="this.cliente.Cidade" name="Cidade" required id="city" class="form-control"
+					type="text" placeholder="Cidade">
+			</div>
+			<div class="form-group">
+				<label for="state">Estado</label>
+				<input [(ngModel)]="this.cliente.Estado" name="Estado" required id="state" class="form-control"
+					type="text" placeholder="Estado">
+			</div>
+			<div class="form-group">
+				<label for="dateBirth">Data de Nascimento</label>
+				<input [(ngModel)]="this.cliente.DataNascimento" name="DataNascimento" required id="dateBirth"
+					class="form-control" type="date" placeholder="Data de Nascimento" bsDatepicker>
+			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+
+	</div>
+</ng-template>
+
+<ng-template #Excluir>
+	<div class="modal-header">
+		<h4 class="modal-title pull-left">Excluir</h4>
+		<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<h2>Tem certeza que deseja excluir esse registro?</h2>
+		<form (ngSubmit)="inserirClientePost()" #inserirCliente="ngForm">
+			<div class="form-group">
+				<label for="name">Nome</label>
+				<input [(ngModel)]="this.cliente.Nome" name="Nome" required id="name" class="form-control" type="text"
+					placeholder="Nome" disabled>
+			</div>
+			<div class="form-group">
+				<label for="adress">Endereço</label>
+				<input [(ngModel)]="this.cliente.Endereco" name="Endereco" required id="adress" class="form-control"
+					type="text" placeholder="Endereço" disabled>
+			</div>
+			<div class="form-group">
+				<label for="telephone">Telefone</label>
+				<input [(ngModel)]="this.cliente.Telefone" name="Telefone" required id="telephone" class="form-control"
+					type="text" placeholder="Telefone" disabled>
+			</div>
+			<div class="form-group">
+				<label for="city">Cidade</label>
+				<input [(ngModel)]="this.cliente.Cidade" name="Cidade" required id="city" class="form-control"
+					type="text" placeholder="Cidade" disabled>
+			</div>
+			<div class="form-group">
+				<label for="state">Estado</label>
+				<input [(ngModel)]="this.cliente.Estado" name="Estado" required id="state" class="form-control"
+					type="text" placeholder="Estado" disabled>
+			</div>
+			<div class="form-group">
+				<label for="dateBirth">Data de Nascimento</label>
+				<input [(ngModel)]="this.cliente.DataNascimento" name="DataNascimento" required id="dateBirth"
+					class="form-control" type="date" placeholder="Data de Nascimento" bsDatepicker disabled>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+			<button class="btn btn-warning float-left" (click)="modalRef.hide()">Cancelar</button>
+			<button class="btn btn-danger float-right" (click)="delete()">Excluir</button>	
+	</div>
+</ng-template>
